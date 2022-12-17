@@ -1,4 +1,4 @@
-# Vanilla Redux & React Redux & Redux Toolkit
+# Coin-Tracker
 
 ### [제 1장 Setup(N)](https://delicate-credit-20c.notion.site/1-Setup-N-41511356f95945b9b11b6eef026c2297)
 
