@@ -1,46 +1,25 @@
-# Getting Started with Create React App
+# Vanilla Redux & React Redux & Redux Toolkit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [제 1장 Setup(N)](https://delicate-credit-20c.notion.site/1-Setup-N-41511356f95945b9b11b6eef026c2297)
 
-## Available Scripts
+### [제 2장 styles(N)](https://delicate-credit-20c.notion.site/2-styles-N-b03c6d7900e34f9b829d1a710e76e33c)
 
-In the project directory, you can run:
+### [제 3장 API 받아오기(N)](https://delicate-credit-20c.notion.site/3-API-N-7037748429b14243a507c6efd760f5c3)
 
-### `yarn start`
+### [제 4장 Route States(N)](https://delicate-credit-20c.notion.site/4-Route-States-N-b74f799266f249d2805230b4ce011d23)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### [제 5장 Data(N)](https://delicate-credit-20c.notion.site/5-Data-N-559ac151bb4a47a991d20f60d3024586)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### [제 6장 Nested Routes 중첩 라우팅(N)](https://delicate-credit-20c.notion.site/6-Nested-Routes-N-ab09d222e4f84696bd6c8d6b97d5ff7c)
 
-### `yarn test`
+### [제 7장 Tap 구현 및 useMatch(N)](https://delicate-credit-20c.notion.site/7-Tap-useMatch-N-0e4052af0d1e41de994cac679f34b2bf)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### [제 8장 React Query(N)](https://delicate-credit-20c.notion.site/8-React-Query-N-9483918815c841e7a3cd09de8dfec84f)
 
-### `yarn build`
+### [제 9장 Price Chart](https://delicate-credit-20c.notion.site/9-Price-Chart-21f5b0e6daa04f0a8dc8ee29668c39d7)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### [제 10장 점검](https://delicate-credit-20c.notion.site/10-eb766541fb534da8b1b5044006a523d0)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### [제 11장 Dark Mode](https://delicate-credit-20c.notion.site/11-Dark-Mode-d5f81e623bf245db991ec172b6bac284)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### [제 12장 Recoil 상태관리](https://delicate-credit-20c.notion.site/12-Recoil-00980aad754f4a94b208595f5493a296)
