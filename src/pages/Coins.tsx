@@ -29,7 +29,7 @@ export default function Coins() {
         <CoinList>
           {data?.slice(0, 100).map((coin) => (
             <Link
-              to={`/${coin.id}`}
+              to={`${process.env.PUBLIC_URL}/${coin.id}`}
               state={{ name: coin.name, id: coin.id }}
               key={coin.id}
             >

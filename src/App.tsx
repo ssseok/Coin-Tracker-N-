@@ -11,12 +11,12 @@ import { isDarkAtom } from "./atoms";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: `${process.env.PUBLIC_URL}/`,
     element: <Coins />,
     errorElement: <NotFound />,
   },
   {
-    path: "/:coinId",
+    path: `${process.env.PUBLIC_URL}/:coinId`,
     element: <Coin />,
     children: [
       {

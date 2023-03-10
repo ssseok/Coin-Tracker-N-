@@ -71,8 +71,8 @@ export default function Coin() {
   const { coinId } = useParams();
   const { state } = useLocation();
   const navigate = useNavigate();
-  const chartMatch = useMatch(`/${coinId}/chart`);
-  const priceMatch = useMatch(`/${coinId}/price`);
+  const chartMatch = useMatch(`${process.env.PUBLIC_URL}/${coinId}/chart`);
+  const priceMatch = useMatch(`${process.env.PUBLIC_URL}/${coinId}/price`);
   const { isLoading: infoLoading, data: infoData } = useQuery<IInfoData>(
     ["info", coinId],
     () => ConinInfoAPI(`${coinId}`)
@@ -94,10 +94,10 @@ export default function Coin() {
         </title>
       </Helmet>
       <Header>
-        <Button to="/">←</Button>
+        <Button to={`${process.env.PUBLIC_URL}`}>←</Button>
         <Title
           onClick={() => {
-            navigate("/");
+            navigate(`${process.env.PUBLIC_URL}/`);
           }}
         >
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
@@ -134,10 +134,14 @@ export default function Coin() {
           </Overview>
           <Tabs>
             <Tab isActive={chartMatch !== null}>
-              <Link to={`/${coinId}/chart`}>Chart</Link>
+              <Link to={`${process.env.PUBLIC_URL}/${coinId}/chart`}>
+                Chart
+              </Link>
             </Tab>
             <Tab isActive={priceMatch !== null}>
-              <Link to={`/${coinId}/price`}>Price</Link>
+              <Link to={`${process.env.PUBLIC_URL}/${coinId}/price`}>
+                Price
+              </Link>
             </Tab>
           </Tabs>
           <Outlet context={{ coinId, tickersData }} />
