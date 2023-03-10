@@ -33,7 +33,7 @@ interface IInfoData {
   last_data_at: string;
 }
 
-interface IPriceData {
+export interface IPriceData {
   id: string;
   name: string;
   symbol: string;
@@ -85,7 +85,6 @@ export default function Coin() {
     }
   );
   const loading = infoLoading || tickersLoading;
-  console.log(tickersData);
 
   return (
     <Container>
@@ -95,6 +94,7 @@ export default function Coin() {
         </title>
       </Helmet>
       <Header>
+        <Button to="/">←</Button>
         <Title
           onClick={() => {
             navigate("/");
@@ -140,7 +140,7 @@ export default function Coin() {
               <Link to={`/${coinId}/price`}>Price</Link>
             </Tab>
           </Tabs>
-          <Outlet context={coinId} />
+          <Outlet context={{ coinId, tickersData }} />
         </>
       )}
     </Container>
@@ -157,7 +157,7 @@ const Container = styled.div`
 const Header = styled.div`
   height: 10vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -215,4 +215,10 @@ const Tab = styled.span<{ isActive: boolean }>`
   a {
     display: block;
   }
+`;
+
+const Button = styled(Link)`
+  font-size: 48px;
+
+  color: ${(props) => props.theme.accentColor};
 `;

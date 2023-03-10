@@ -36,53 +36,80 @@ export default function Chart() {
       {isLoading ? (
         "Loading..."
       ) : (
-        <ReactApexChart
-          type="line"
-          series={[
-            {
-              name: "Price",
-              data: data?.map((price) => Number(price.close)) ?? [],
-            },
-          ]}
-          options={{
-            theme: {
-              mode: isDark ? "dark" : "light",
-            },
-            chart: {
-              height: 500,
-              width: 500,
-              toolbar: {
-                show: false,
+        <>
+          <ReactApexChart
+            // type="candlestick"
+            type="line"
+            series={[
+              // {
+              //   name: "Price",
+              //   data: data?.map((price) => [
+              //     new Date(price.time_open).getTime(),
+              //     price.open,
+              //     price.high,
+              //     price.low,
+              //     price.close,
+              //   ]) as any,
+              // },
+              {
+                name: "Price",
+                data: data?.map((price) => Number(price.close)) ?? [],
               },
-              background: "transparent",
-            },
-            grid: { show: false },
-            stroke: {
-              curve: "smooth",
-              width: 3,
-            },
-            xaxis: {
-              labels: { show: false },
-              axisBorder: { show: false },
-              axisTicks: { show: false },
-              type: "datetime",
-              categories: data?.map((price) =>
-                new Date(price.time_close * 1000).toISOString()
-              ),
-            },
-            yaxis: { show: false },
-            fill: {
-              type: "gradient",
-              gradient: { gradientToColors: ["#0be881"], stops: [0, 100] },
-            },
-            colors: ["#0fbcf9"],
-            tooltip: {
-              y: {
-                formatter: (value) => `$${value.toFixed(2)}`,
+            ]}
+            options={{
+              theme: {
+                mode: isDark ? "dark" : "light",
               },
-            },
-          }}
-        />
+              plotOptions: {
+                candlestick: {
+                  colors: {
+                    upward: "#ff0000", // 상승 시 색상
+                    downward: "#3C90EB", // 하락 시 색상
+                  },
+                },
+              },
+              title: {
+                text: `${coinId} Chart`,
+                align: "left",
+              },
+              chart: {
+                type: "candlestick",
+                height: 500,
+                width: 500,
+                // toolbar: {
+                //   show: false,
+                // },
+                background: "transparent",
+              },
+              // grid: { show: false },
+              // stroke: {
+              //   curve: "smooth",
+              //   width: 3,
+              // },
+              xaxis: {
+                // labels: { show: false },
+                // axisBorder: { show: false },
+                // axisTicks: { show: false },
+                type: "datetime",
+                categories: data?.map((price) =>
+                  new Date(price.time_close * 1000).toISOString()
+                ),
+              },
+
+              // yaxis: { show: false },
+              // fill: {
+              //   type: "gradient",
+              //   gradient: { gradientToColors: ["#0be881"], stops: [0, 100] },
+              // },
+              // colors: ["#0fbcf9"],
+              tooltip: {
+                y: {
+                  formatter: (value) => `$${value.toFixed(0)}`,
+                },
+              },
+            }}
+          />
+        </>
       )}
     </div>
   );
