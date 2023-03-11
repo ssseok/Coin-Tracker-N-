@@ -22,7 +22,7 @@ interface IHistorical {
 
 export default function Chart() {
   const isDark = useRecoilValue(isDarkAtom);
-  const coinId = useOutletContext<ChartProps>();
+  const { coinId } = useOutletContext<ChartProps>();
   const { isLoading, data } = useQuery<IHistorical[]>(
     ["ohlcv", coinId],
     () => ConinHistory(`${coinId}`),
@@ -38,22 +38,17 @@ export default function Chart() {
       ) : (
         <>
           <ReactApexChart
-            // type="candlestick"
-            type="line"
+            type="candlestick"
             series={[
-              // {
-              //   name: "Price",
-              //   data: data?.map((price) => [
-              //     new Date(price.time_open).getTime(),
-              //     price.open,
-              //     price.high,
-              //     price.low,
-              //     price.close,
-              //   ]) as any,
-              // },
               {
                 name: "Price",
-                data: data?.map((price) => Number(price.close)) ?? [],
+                data: data?.map((price) => [
+                  new Date(price.time_open).getTime(),
+                  price.open,
+                  price.high,
+                  price.low,
+                  price.close,
+                ]) as any,
               },
             ]}
             options={{
